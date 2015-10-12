@@ -11,8 +11,10 @@
 @interface DetailsViewController : UIViewController
 
 @property (weak, nonatomic) IBOutlet UILabel *detailsTitleUILabel;
+@property (weak, nonatomic) IBOutlet UIImageView *detailsUIImageView;
+@property (weak, nonatomic) IBOutlet UITextView *detailsSynopsisUIText;
 
-@property NSString *detailsTitle;
+@property NSDictionary *details;
 
 - (IBAction)goBack:(id)sender;
 

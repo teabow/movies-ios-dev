@@ -45,9 +45,16 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     static NSString *identifier = @"MovieTableViewCell";
     
-    MovieTableViewCell *cell = (MovieTableViewCell *)[moviesTableView dequeueReusableCellWithIdentifier:identifier];
+    MovieTableViewCell *cell = (MovieTableViewCell *)[moviesTableView dequeueReusableCellWithIdentifier:identifier];    
     
-    cell.movieTitle.text = [[array objectAtIndex:indexPath.row] objectForKey:@"title"];
+    NSDictionary *content = [array objectAtIndex:indexPath.row];
+    NSDictionary *posters = [content objectForKey:@"posters"];
+        
+    [NSURLConnection sendAsynchronousRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:[posters objectForKey:@"thumbnail"]]] queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *error) {
+        cell.movieImage.image = [UIImage imageWithData:data];
+    }];
+    
+    cell.movieTitle.text = [content objectForKey:@"title"];
     
     return cell;
 }
@@ -75,7 +82,7 @@
 - (void) goToDetailsView:(NSDictionary *)item {
     DetailsViewController *detailsViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"DetailsViewController"];
     
-    detailsViewController.detailsTitle = [[NSString alloc] initWithString:[item objectForKey:@"title"]];
+    detailsViewController.details = item;
     
     [self presentViewController:detailsViewController animated:NO completion:nil];
 }

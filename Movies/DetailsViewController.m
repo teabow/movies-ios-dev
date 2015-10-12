@@ -14,7 +14,7 @@
 @end
 
 @implementation DetailsViewController
-@synthesize detailsTitle, detailsTitleUILabel;
+@synthesize details, detailsTitleUILabel, detailsUIImageView, detailsSynopsisUIText;
 
 - (IBAction)goBack:(id)sender {
     
@@ -28,8 +28,15 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    if (detailsTitle != nil) {
-        detailsTitleUILabel.text = detailsTitle;
+    if (details != nil) {
+        detailsTitleUILabel.text = [details objectForKey:@"title"];
+        detailsSynopsisUIText.text = [details objectForKey:@"synopsis"];
+        
+        NSDictionary *posters = [details objectForKey:@"posters"];
+        
+        [NSURLConnection sendAsynchronousRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:[posters objectForKey:@"original"]]] queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *error) {
+            detailsUIImageView.image = [UIImage imageWithData:data];
+        }];
     }
 }
 
