@@ -19,10 +19,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Movies" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l8c-TT-ZgO">
-                                <rect key="frame" x="273" y="20" width="55" height="21"/>
+                                <rect key="frame" x="273" y="27" width="55" height="21"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="80" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="C0s-oq-r39">
@@ -80,8 +80,8 @@
                             <constraint firstItem="C0s-oq-r39" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="2Ee-UN-qT2"/>
                             <constraint firstAttribute="trailing" secondItem="C0s-oq-r39" secondAttribute="trailing" id="Abh-VB-mX8"/>
                             <constraint firstItem="l8c-TT-ZgO" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="I9H-5Q-9uy"/>
-                            <constraint firstItem="C0s-oq-r39" firstAttribute="top" secondItem="l8c-TT-ZgO" secondAttribute="bottom" constant="8" symbolic="YES" id="ZQT-1V-9sX"/>
-                            <constraint firstItem="l8c-TT-ZgO" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="d0T-2j-QAX"/>
+                            <constraint firstItem="C0s-oq-r39" firstAttribute="top" secondItem="l8c-TT-ZgO" secondAttribute="bottom" constant="1" id="ZQT-1V-9sX"/>
+                            <constraint firstItem="l8c-TT-ZgO" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="7" id="d0T-2j-QAX"/>
                             <constraint firstItem="C0s-oq-r39" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="lUD-2t-4wS"/>
                         </constraints>
                     </view>
@@ -112,9 +112,9 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6vQ-hG-QfK">
-                                <rect key="frame" x="26" y="19" width="34" height="30"/>
+                                <rect key="frame" x="19" y="23" width="48" height="30"/>
                                 <animations/>
-                                <state key="normal" title="Back"/>
+                                <state key="normal" title="&lt; Back"/>
                                 <connections>
                                     <action selector="goBack:" destination="QoJ-g8-WgE" eventType="touchUpInside" id="k8e-8W-CYG"/>
                                 </connections>
@@ -149,15 +149,16 @@
                             <constraint firstItem="QwC-zw-4Tk" firstAttribute="leading" secondItem="JA4-mA-oGk" secondAttribute="leading" id="QcJ-Yo-DPc"/>
                             <constraint firstItem="wXe-ZH-7yo" firstAttribute="top" secondItem="Yec-fP-Eev" secondAttribute="bottom" constant="318" id="Qvi-dL-8yB"/>
                             <constraint firstItem="QwC-zw-4Tk" firstAttribute="top" secondItem="JA4-mA-oGk" secondAttribute="bottom" constant="8" id="UXg-FB-Jae"/>
-                            <constraint firstItem="6vQ-hG-QfK" firstAttribute="leading" secondItem="xFW-Dk-xln" secondAttribute="leadingMargin" constant="6" id="W48-Mv-483"/>
+                            <constraint firstItem="6vQ-hG-QfK" firstAttribute="leading" secondItem="xFW-Dk-xln" secondAttribute="leadingMargin" constant="-1" id="W48-Mv-483"/>
                             <constraint firstItem="wXe-ZH-7yo" firstAttribute="top" secondItem="QwC-zw-4Tk" secondAttribute="bottom" constant="20" id="YEE-SO-thg"/>
+                            <constraint firstItem="6vQ-hG-QfK" firstAttribute="top" secondItem="PrX-ba-p1K" secondAttribute="bottom" constant="3" id="ZCe-gE-oIh"/>
                             <constraint firstItem="mt4-l3-cuh" firstAttribute="top" secondItem="PrX-ba-p1K" secondAttribute="bottom" constant="8" symbolic="YES" id="gwF-En-K8J"/>
                             <constraint firstItem="QwC-zw-4Tk" firstAttribute="leading" secondItem="xFW-Dk-xln" secondAttribute="leadingMargin" constant="67" id="iLb-k8-dlW"/>
                             <constraint firstItem="QwC-zw-4Tk" firstAttribute="centerX" secondItem="Yec-fP-Eev" secondAttribute="centerX" id="m7n-EE-21k"/>
                             <constraint firstItem="Yec-fP-Eev" firstAttribute="centerX" secondItem="xFW-Dk-xln" secondAttribute="centerX" id="rpZ-rd-tGS"/>
                             <constraint firstItem="Yec-fP-Eev" firstAttribute="top" secondItem="mt4-l3-cuh" secondAttribute="bottom" constant="45" id="s7D-Xu-Vwv"/>
                             <constraint firstItem="QwC-zw-4Tk" firstAttribute="top" secondItem="Yec-fP-Eev" secondAttribute="bottom" constant="67" id="s9l-BU-4Tt"/>
-                            <constraint firstItem="mt4-l3-cuh" firstAttribute="bottom" secondItem="6vQ-hG-QfK" secondAttribute="bottom" id="wQs-pi-NtV"/>
+                            <constraint firstItem="mt4-l3-cuh" firstAttribute="bottom" secondItem="6vQ-hG-QfK" secondAttribute="bottom" constant="-4" id="wQs-pi-NtV"/>
                         </constraints>
                     </view>
                     <connections>
